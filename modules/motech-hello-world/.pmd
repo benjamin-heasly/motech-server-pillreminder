@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pmd>
     <useProjectRuleSet>true</useProjectRuleSet>
-    <ruleSetFile>C:\Users\motech\Desktop\BSH-sandbox\motech-server-pillreminder\modules\motech-hello-world\.pmdruleset</ruleSetFile>
+    <ruleSetFile>C:\Users\motech\Desktop\BSH-sandbox\benjamin-heasly-motech-server-pillreminder\modules\motech-hello-world\.pmdruleset</ruleSetFile>
     <includeDerivedFiles>false</includeDerivedFiles>
     <violationsAsErrors>true</violationsAsErrors>
 </pmd>
