@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ruleset xmlns="http://pmd.sf.net/ruleset/1.0.0" name="M2Eclipse PMD RuleSet" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://pmd.sf.net/ruleset_xml_schema.xsd" xsi:schemaLocation="http://pmd.sf.net/ruleset/1.0.0 http://pmd.sf.net/ruleset_xml_schema.xsd">
+   <description/>
+   <exclude-pattern>.*C:/Users/motech/Desktop/BSH-sandbox/motech-server-pillreminder/modules/motech-hello-world/target.*</exclude-pattern>
+   <exclude-pattern>.*C:/Users/motech/Desktop/BSH-sandbox/motech-server-pillreminder/modules/motech-hello-world/src/test/java.*</exclude-pattern>
+   <rule ref="rulesets/sunsecure.xml/MethodReturnsInternalArray">
+      <priority>2</priority>
+   </rule>
+   <rule ref="rulesets/sunsecure.xml/ArrayIsStoredDirectly">
+      <priority>2</priority>
+   </rule>
+   <rule ref="rulesets/codesize.xml/NcssMethodCount">
+      <properties>
+         <property name="minimum" value="50"/>
+      </properties>
+   </rule>
+   <rule ref="rulesets/coupling.xml/LooseCoupling"/>
+   <rule ref="rulesets/design.xml/ConstructorCallsOverridableMethod"/>
+   <rule ref="rulesets/design.xml/PreserveStackTrace"/>
+   <rule ref="rulesets/design.xml/SimplifyConditional"/>
+   <rule ref="rulesets/design.xml/UnnecessaryLocalBeforeReturn"/>
+   <rule ref="rulesets/logging-java.xml/AvoidPrintStackTrace"/>
+   <rule ref="rulesets/migrating.xml/IntegerInstantiation"/>
+   <rule ref="rulesets/strictexception.xml/AvoidCatchingThrowable"/>
+   <rule ref="rulesets/strictexception.xml/AvoidThrowingRawExceptionTypes"/>
+   <rule ref="rulesets/strictexception.xml/SignatureDeclareThrowsException"/>
+   <rule ref="rulesets/strings.xml/AvoidDuplicateLiterals"/>
+   <rule ref="rulesets/strings.xml/UseIndexOfChar"/>
+   <rule ref="rulesets/unusedcode.xml/UnusedFormalParameter"/>
+   <rule ref="rulesets/unusedcode.xml/UnusedLocalVariable"/>
+   <rule ref="rulesets/unusedcode.xml/UnusedPrivateField"/>
+   <rule ref="rulesets/unusedcode.xml/UnusedPrivateMethod"/>
+   <rule ref="rulesets/javabeans.xml/MissingSerialVersionUID"/>
+   <rule class="net.sourceforge.pmd.rules.XPathRule" dfa="false" externalInfoUrl="" message="Avoid importing internal packages of any external libraries" name="DontImportInternal" typeResolution="true">
+      <description>
+        Avoid importing any internal package of any external libraries.
+    </description>
+      <priority>3</priority>
+      <properties>
+         <property name="xpath">
+            <value><![CDATA[
+                
+                //ImportDeclaration
+                [not(starts-with(Name/@Image, 'org.motechproject'))]
+                [contains(Name/@Image, '.internal.')]
+                
+            ]]></value>
+         </property>
+      </properties>
+   </rule>
+</ruleset>
